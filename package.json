@@ -1,47 +1,90 @@
 {
-  "name": "vue",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-admin-template",
+  "version": "3.0.0",
+  "license": "MIT",
+  "description": "A vue admin template with Element UI & axios & iconfont & permission control & lint",
+  "author": "Pan <panfree23@gmail.com>",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "dev": "vue-cli-service serve --port $PORT",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "build": "npm i&&npm i qj-template-zgl@latest -save && node build/build.js",
+    "build:report": "npm_config_report=true node build/build.js",
+    "lint": "eslint --ext .js,.vue src",
+    "test": "npm run lint",
+    "dll": "webpack --config./build/webpack.dll.conf.js"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "axios": "0.17.1",
+    "cnpm": "^5.2.0",
+    "element-ui": "2.14.1",
+    "jquery": "^3.3.1",
+    "js-cookie": "2.2.0",
+    "normalize.css": "7.0.0",
+    "nprogress": "0.2.0",
+    "qj-template-zgl": "^3.0.45",
+    "vue": "2.5.10",
+    "vue-router": "3.0.1",
+    "vuex": "3.0.1",
+    "xlsx": "^0.15.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.9.0",
-    "@vue/cli-plugin-eslint": "^3.9.0",
-    "@vue/cli-service": "^3.9.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "autoprefixer": "7.2.3",
+    "babel-core": "6.26.0",
+    "babel-eslint": "8.0.3",
+    "babel-helper-vue-jsx-merge-props": "2.0.3",
+    "babel-loader": "7.1.2",
+    "babel-plugin-syntax-jsx": "6.18.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-plugin-transform-vue-jsx": "3.5.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-stage-2": "6.24.1",
+    "chalk": "^2.3.0",
+    "copy-webpack-plugin": "4.2.3",
+    "css-loader": "0.28.7",
+    "echarts": "^4.1.0",
+    "eslint": "4.13.1",
+    "eslint-friendly-formatter": "3.0.0",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-html": "4.0.1",
+    "eventsource-polyfill": "0.9.6",
+    "extract-text-webpack-plugin": "3.0.2",
+    "file-loader": "1.1.5",
+    "friendly-errors-webpack-plugin": "1.6.1",
+    "html-webpack-plugin": "2.30.1",
+    "lodash": "^4.17.10",
+    "node-notifier": "5.1.2",
+    "node-sass": "^4.9.0",
+    "optimize-css-assets-webpack-plugin": "3.2.0",
+    "ora": "1.3.0",
+    "portfinder": "1.0.13",
+    "postcss-import": "11.0.0",
+    "postcss-loader": "2.0.9",
+    "rimraf": "2.6.2",
+    "sass-loader": "6.0.6",
+    "semver": "5.4.1",
+    "shelljs": "0.7.8",
+    "svg-sprite-loader": "3.5.2",
+    "uglifyjs-webpack-plugin": "1.1.3",
+    "url-loader": "0.6.2",
+    "vue-cli": "^2.9.6",
+    "vue-i18n": "^8.15.0",
+    "vue-image-swipe": "^1.0.5",
+    "vue-loader": "13.5.0",
+    "vue-style-loader": "3.0.3",
+    "vue-template-compiler": "2.5.10",
+    "wangeditor": "^3.1.1",
+    "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "2.9.1",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-merge": "4.1.1"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions"
+    "last 2 versions",
+    "not ie <= 8"
   ]
 }
